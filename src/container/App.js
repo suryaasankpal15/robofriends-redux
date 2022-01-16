@@ -14,7 +14,7 @@ class App extends Component {
             searchfield : ''
         }
         console.log("In constructor()");
-        console.log("In constructor() new");
+        console.log("In constructor() new after push");
     }
 
     onSearchChange = (event) => {
