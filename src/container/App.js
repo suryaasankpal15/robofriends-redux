@@ -26,8 +26,6 @@ class App extends Component {
         this.state = {
             robots : []
         }
-        console.log("In constructor()");
-        console.log("In constructor() new after push");
     }
 
 
@@ -54,7 +52,6 @@ class App extends Component {
          .then(robots => robots.json())
          .then(jsonRobots => this.setState({robots: jsonRobots}));
          //.then(jsonRobots => []);
-         console.log("In componentDidMount()");
     }
 
     render(){

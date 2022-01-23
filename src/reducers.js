@@ -5,7 +5,6 @@ const initailState = {
 }
 
 export const searchRobots = (state=initailState,action={}) => {
-    console.log("action type : "+action.type);
     switch (action.type) {
         case CHANGE_SEARCH_FIELD:
             return Object.assign({},state, {searchfield: action.payload});
