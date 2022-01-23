@@ -3,14 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './container/App.js';
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { createLogger } from 'redux-logger';
-import { searchRobots } from './reducers'
+import { searchRobots, requestRobots } from './reducers'
+import thunkMiddleware from 'redux-thunk';
 import reportWebVitals from './reportWebVitals';
 import 'tachyons';
 
 const logger = createLogger();
-const store = createStore(searchRobots, applyMiddleware(logger));
+const rootReducer = combineReducers({searchRobots,requestRobots});
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware,logger));
 
 ReactDOM.render(
   <React.StrictMode>
